@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula Finder (not tm)</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>Formula Finder (not tm)</h1>
+    <form onsubmit="findFomulae()">
+        <input type="text" name="formula" id="formulasearch">
+        <input type="submit" value="sabmit da forrm">
+        <button type="button">open values popup n whatever idk</button>
+    </form>
+
+    <div id="valuespopup">
+        <input type="checkbox" name="" id="addvalues" onchange="addValues()"> <label for="addvalues">Add values for further calculation?</label>
+        <form onsubmit="findFomulaeByVar(event)">
+            <input type="text" name="formula" id="variablesearch" oninput="findVariables()">
+            <input disabled type="submit" value="search formulas" id="formulaebyvar">
+        
+            <div id="surelyjswillfindthis">
+
+            </div>
+        </form>
+    </div>
+
+    <div id="formulaepopup">
+        <div id="variables_selected"></div>
+        <div id="formulaeresults"></div>
+    </div>
+
+    <script src="./script.js"></script>
+
+    <!-- <div id="v">
+        <select id="vsub" onchange="addVariableOption('v')">
+            <option selected></option>
+            <option>_1</option>
+            <option>_2</option>
+            <option>_i</option>
+            <option>_f</option>
+            <option>_1i</option>
+            <option>_1f</option>
+            <option>_2i</option>
+            <option>_2f</option>
+        </select>
+
+        <div class="valuesspecific" style="display: none;"> 
+            <input type="text" name="" id="vvalue" oninput="addVariableOption('v')">
+
+            <select id="vunit" onchange="addVariableOption('v')">
+                <option>m/s</option>
+                <option>km/h</option>
+                <option>mi/h</option>
+                <option>ft/s</option>
+                <option>in/s</option>
+            </select>
+        </div>
+    </div> -->
+</body>
+</html>
