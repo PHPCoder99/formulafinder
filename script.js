@@ -207,6 +207,7 @@ function selectOptionHTML(sub){
 }
 
 function addVariable(variable, theThis) {
+    console.log(variablesWithValues);
     document.querySelector("#formulaebyvar").disabled = false;
     var optionsHTML = constructSelect(variable);
     var unitOptions = "";
@@ -222,7 +223,7 @@ function addVariable(variable, theThis) {
                     unitOptions += `<option>${unit}</option>`;
                 }
                 optionsHTML = selectOptionHTML(selectedVariables[variable][i]);
-                variableOptionHTML(variable, optionsHTML, unitOptions, container, i);
+                variableOptionHTML(variable, optionsHTML, unitOptions, container);
                 
             }
         }
@@ -244,7 +245,9 @@ function addVariable(variable, theThis) {
                 for (unit of Object.keys(variables[variable].units)) {
                     unitOptions += `<option>${unit}</option>`;
                 }
-                optionsHTML = selectOptionHTML(variablesWithValues[variable][i]);
+                console.log(variablesWithValues);
+                optionsHTML = selectOptionHTML(Object.keys(variablesWithValues[variable])[i]);
+                console.log(variablesWithValues);
                 variableOptionHTML(variable, optionsHTML, unitOptions, container, i);
             }
         }
