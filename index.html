@@ -15,11 +15,11 @@
     </form>
 
     <div id="valuespopup">
-        <input type="checkbox" name="" id="addvalues" onchange="addValues()"> <label for="addvalues">Add values for further calculation?</label>
-        <form onsubmit="findFomulaeByVar(event)">
+        <input checked type="checkbox" name="" id="addvalues" onchange="addValuesFunc(this)"> <label for="addvalues">Add values for further calculation?</label>
+        <form onsubmit="formByVarGroupFunc(event)" id="variableForm" novalidate>
             <input type="text" name="formula" id="variablesearch" oninput="findVariables()">
             <input disabled type="submit" value="search formulas" id="formulaebyvar">
-        
+            <div id="variableError"></div>
             <div id="surelyjswillfindthis">
 
             </div>
